@@ -1,38 +1,215 @@
-.App {
+@import url('https://fonts.googleapis.com/css2?family=Anonymous+Pro:ital@1&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,500&display=swap');
+
+html, body{
+  margin: 0;
+}
+
+body{
+  background-color: #f7f7f7;
+  min-height: 100vh;
+}
+
+header{
+  margin-top: 18px;
+}
+
+.container{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.header-text{
+  font-family: 'Anonymous Pro', monospace;
+  font-size: 24px;
+}
+
+.card{
+  margin-top: 2em;
+  display: flex;
+  justify-items: center;
+  align-items: center;
+}
+
+.card-body{
+  padding: 12px;
+}
+
+.balance{
+  font-weight: bold;
+}
+
+h1, h3{
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+}
+
+.vl{
+  border: 1px solid #c2c2c2;
+}
+
+hr{
+  border-color: #c2c2c2;
+}
+
+.inc-exp-container{
+  margin-top: 3em ;
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+  background-color: #fffafa;
+  display: flex;
+  justify-content: space-between;
+  margin: 20px;
+}
+
+.inc-exp-container > div{
+  flex: 1;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.income-container{
+  text-transform: uppercase;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.income-container h4{
+  font-weight: 600;
+  margin: 0;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.income-container p{
+  margin: 0px;
+  color: #86d149;
+  font-size: 20px;
+  margin: 5px 0;
+  letter-spacing: 1px;
+}
+
+.exspense-container{
+  text-transform: uppercase;
+}
+
+.exspense-container h4{
+  font-weight: 600;
+  margin: 0;
+}
+
+.exspense-container p{
+  margin: 0px;
+  color: #d34545;
+  font-size: 20px;
+  margin: 5px 0;
+  letter-spacing: 1px;
+}
+
+.history-container{
+  margin-top: 2em;
+}
+
+
+/* history card */
+.list{
+  list-style-type: none;
+  padding: 0;
+  margin-bottom: 40px;
+}
+
+.list li{
+  background-color: #ffffff;
+  color: #333;
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  padding: 10px;
+  margin: 10px 0;
+}
+
+.list li.plus-income{
+  border-right: 5px solid #2ecc71;
+}
+
+.list li.minus-income{
+  border-right: 5px solid #c0392b;
+}
+
+.delete-btn{
+  cursor: pointer;
+  background-color: #e74c3c;
+  border: 0;
+  color: #ffffff;
+  font-size: 20px;
+  line-height: 20px;
+  padding: 2px 5px;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translate(-100%, -50%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.list li:hover .delete-btn{
+  opacity: 1;
+}
+
+.delete-btn:active{
+  border: 0;
+}
+
+
+/* form */
+.form-control{
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  margin: 1em 0;
 }
 
-.App-link {
-  color: #61dafb;
+.form-control p{
+  margin: 0px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.form-control input{
+  margin: 12px 0;
+}
+
+input{
+  padding: 10px;
+  border: 1px solid rgb(224, 224, 224);
+}
+
+.btn{
+  cursor: pointer;
+  background-color: #a45ec0;
+  color: #fff;
+  border: 0;
+  display: block;
+  font-size: 16px;
+  margin: 10px 0 30px;
+  padding: 10px;
+  width: 100%;
+}
+
+
+
+.col-1{width: 8.33%;}
+.col-2{width: 16.66%;}
+.col-3{width: 24.99%;}
+.col-4{width: 33.32%;}
+.col-5{width: 41.65%;}
+.col-6 {width: 50%;}
+.col-7 {width: 58.33%;}
+.col-8 {width: 66.66%;}
+.col-9 {width: 75%;}
+.col-10 {width: 83.33%;}
+.col-11 {width: 91.66%;}
+.col-12 {width: 100%;}
+
+@media only screen and (max-width:789px){
+  [class*="col-"] {
+      width: 80%;
+    }
+  
 }
